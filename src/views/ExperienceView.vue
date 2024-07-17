@@ -1,9 +1,19 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { containerStyle } from './general-styling'
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      containerStyle
+    }
+  }
+}
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
+  <main :class="containerStyle">
+
   </main>
 </template>

@@ -13,9 +13,7 @@ export default {
 </script>
 
 <template>
-  <div :class="containerStyle">
-    <h1>This is the projects page</h1>
-  </div>
+  <main :class="containerStyle">
+    <p>this is the contact page</p>
+  </main>
 </template>
-
-<style></style>
