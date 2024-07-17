@@ -10,7 +10,12 @@ import {
   ViFileTypeJsOfficial,
   ViFileTypePython,
   ViFileTypeRproj,
-  ViFileTypePgsql
+  ViFileTypePgsql,
+  ViFileTypeReactjs,
+  ViFileTypeHtml,
+  ViFileTypeTailwind,
+  SiExpress,
+  CoSocketIo
 } from 'oh-vue-icons/icons'
 import './assets/tailwind.css'
 
@@ -20,7 +25,12 @@ addIcons(
   ViFileTypeJsOfficial,
   ViFileTypePython,
   ViFileTypeRproj,
-  ViFileTypePgsql
+  ViFileTypePgsql,
+  ViFileTypeReactjs,
+  ViFileTypeHtml,
+  ViFileTypeTailwind,
+  SiExpress,
+  CoSocketIo
 )
 
 const app = createApp(App)
