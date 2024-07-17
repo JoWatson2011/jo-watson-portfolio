@@ -11,6 +11,7 @@ export default {
 
 <template>
   <nav class="flex justify-center">
+    <RouterLink to="/" :class="tabStyle">About Me</RouterLink>
     <RouterLink to="/projects" :class="tabStyle">Projects</RouterLink>
     <RouterLink to="/experience" :class="tabStyle">Experience</RouterLink>
     <RouterLink to="/contact" :class="tabStyle">Contact</RouterLink>
