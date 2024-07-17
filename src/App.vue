@@ -6,8 +6,8 @@ import TabButtonNavigation from './components/TabButtonNavigation.vue'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
+  <header class="ml-5 mr-5">
+    <div>
       <SocialsNavigation />
       <HeaderContent />
     </div>
