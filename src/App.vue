@@ -1,62 +1,20 @@
 <script setup>
 import HeaderContent from './components/HeaderContent.vue'
 import SocialsNavigation from './components/SocialsNavigation.vue'
-import NavList from './components/NavList.vue'
+import TabButtonNavigation from './components/TabButtonNavigation.vue'
 import { RouterLink, RouterView } from 'vue-router'
 </script>
 
-<script>
-export default {
-  data() {
-    return {
-      windowWidth: window.innerWidth,
-      containerStyle: ''
-    }
-  },
-
-  methods: {
-    onResize() {
-      this.windowWidth = window.innerWidth
-      setStyle()
-    },
-    setStyle() {
-      const baseStyle = 'flex z-0 px-4 pt-2 pb-4 text-gray-600 min-w-[370px] max-w-[800px] '
-      const smallWindowStyle = 'flex-wrap'
-      const largeWindowStyle =
-        ' bg-pink-50 absolute t-[50%] l-[50%]  border-t-4 border-l border-r-4 border-sky-500 rounded-[30px] shadow-block-page'
-      this.containerStyle =
-        baseStyle + (this.windowWidth < 500 ? smallWindowStyle : largeWindowStyle)
-    }
-  },
-  mounted() {
-    this.setStyle()
-    // this.containerStyle = this.setStyle()
-
-    // this.windowWidth = this.$refs.window.innerWidth,
-
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize)
-  }
-}
-</script>
-
 <template>
-  <SocialsNavigation />
   <div
-    id="parent-container"
-    class="absolute flex justify-center items-center overflow-y-auto w-full h-full"
+    class="absolute m-auto z-0 top-[20px] px-4 pt-2 pb-4 text-gray-600 border-t-4 border-l border-r-4 border-sky-500 rounded-tr-md rounded-b-lg bg-pink-50 min-w-[370px] max-w-[950px] shadow-block-page"
   >
-    <div :class="containerStyle">
-      <header class="flex flex-col">
-        <HeaderContent />
-        <NavList />
-      </header>
-      <RouterView />
-    </div>
+    <header class="flex flex-col">
+      <SocialsNavigation />
+      <HeaderContent />
+    </header>
+    <TabButtonNavigation />
   </div>
 </template>
+
+<style scoped></style>
