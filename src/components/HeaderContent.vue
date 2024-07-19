@@ -3,7 +3,7 @@
     <RouterLink to="/">
       <img
         alt="stardew-valley-avatar"
-        class="rounded-full mr-[10px]"
+        class="rounded-full mr-[10px] shadow-block-image"
         src="@/assets/avatar.png"
         width="125"
         height="125"
