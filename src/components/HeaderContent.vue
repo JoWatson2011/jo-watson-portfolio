@@ -11,9 +11,13 @@
     </RouterLink>
     <div>
       <RouterLink to="/">
-        <h1 class="text-[2rem] font-semibold whitespace-nowrap text-center">Jo Watson</h1>
+        <h1 class="text-[2rem] font-semibold whitespace-nowrap text-center text-black">
+          Jo Watson
+        </h1>
       </RouterLink>
-      <h2 class="text-[1.5rem] whitespace-nowrap text=center">Junior Software Developer</h2>
+      <h2 class="text-[1.5rem] whitespace-nowrap text=center text-black">
+        Junior Software Developer
+      </h2>
     </div>
   </div>
 </template>
