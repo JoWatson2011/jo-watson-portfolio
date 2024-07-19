@@ -15,7 +15,10 @@ import {
   ViFileTypeHtml,
   ViFileTypeTailwind,
   SiExpress,
-  CoSocketIo
+  CoSocketIo,
+  BiArchiveFill,
+  IoDocumentText,
+  BiEnvelopeOpenFill
 } from 'oh-vue-icons/icons'
 import './assets/tailwind.css'
 
@@ -30,7 +33,10 @@ addIcons(
   ViFileTypeHtml,
   ViFileTypeTailwind,
   SiExpress,
-  CoSocketIo
+  CoSocketIo,
+  BiArchiveFill,
+  IoDocumentText,
+  BiEnvelopeOpenFill
 )
 
 const app = createApp(App)
