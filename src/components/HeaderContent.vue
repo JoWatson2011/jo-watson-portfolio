@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex items-center justify-center pt-8 pb-8">
+  <div class="flex flex-col items-center justify-center pt-8 pb-8">
     <img
       alt="stardew-valley-avatar"
       class="rounded-full mr-[10px]"
@@ -8,8 +8,8 @@
       height="125"
     />
     <div>
-      <h1 class="text-[2.7rem]">Jo Watson</h1>
-      <h2 class="text-2xl">Junior Software Developer</h2>
+      <h1 class="text-[2rem] font-semibold whitespace-nowrap text-center">Jo Watson</h1>
+      <h2 class="text-[1.5rem] whitespace-nowrap text=center">Junior Software Developer</h2>
     </div>
   </div>
 </template>
