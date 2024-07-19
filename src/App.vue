@@ -6,14 +6,15 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header class="ml-5 mr-5">
-    <div>
+  <div
+    class="absolute m-auto z-0 top-[20px] px-4 pt-2 pb-4 text-gray-600 border-t-4 border-l border-r-4 border-sky-500 rounded-tr-md rounded-b-lg bg-pink-50 min-w-[370px] max-w-[950px] shadow-block-page"
+  >
+    <header class="flex flex-col">
       <SocialsNavigation />
       <HeaderContent />
-    </div>
-  </header>
-
-  <TabButtonNavigation />
+    </header>
+    <TabButtonNavigation />
+  </div>
 </template>
 
 <style scoped></style>
