@@ -24,7 +24,7 @@ export default {
         'flex justify-center z-0 px-4 pt-2 pb-4 text-gray-600 min-w-[370px] max-w-[800px] '
       const smallWindowStyle = 'flex-wrap'
       const largeWindowStyle =
-        ' bg-pink-50 absolute t-[50%] l-[50%]  border-t-4 border-l border-r-4 border-sky-500 rounded-[30px] shadow-block-page'
+        ' bg-light-background absolute t-[50%] l-[50%] rounded-[30px] shadow-block-page'
       this.containerStyle =
         baseStyle + (this.windowWidth < 750 ? smallWindowStyle : largeWindowStyle)
     }
