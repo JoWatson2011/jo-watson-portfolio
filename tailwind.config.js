@@ -12,7 +12,7 @@ module.exports = {
         1px -6px 2px 1px rgb(132, 248, 255)
         `,
         'project-card': `
-        2px -2px 5px 3px white
+        2px -2px 5px 3px lightgrey
         `
       }
     }
