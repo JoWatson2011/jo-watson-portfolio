@@ -17,23 +17,19 @@ export default {
   methods: {
     onResize() {
       this.windowWidth = window.innerWidth
-      setStyle()
+      this.setStyle()
     },
     setStyle() {
-      const baseStyle = 'flex z-0 px-4 pt-2 pb-4 text-gray-600 min-w-[370px] max-w-[800px] '
+      const baseStyle = 'flex justify-center z-0 px-4 pt-2 pb-4 text-gray-600 min-w-[370px] max-w-[800px] '
       const smallWindowStyle = 'flex-wrap'
       const largeWindowStyle =
         ' bg-pink-50 absolute t-[50%] l-[50%]  border-t-4 border-l border-r-4 border-sky-500 rounded-[30px] shadow-block-page'
       this.containerStyle =
-        baseStyle + (this.windowWidth < 500 ? smallWindowStyle : largeWindowStyle)
+        baseStyle + (this.windowWidth < 750 ? smallWindowStyle : largeWindowStyle)
     }
   },
   mounted() {
     this.setStyle()
-    this.containerStyle = this.setStyle()
-
-    // this.windowWidth = this.$refs.window.innerWidth,
-
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize)
     })
