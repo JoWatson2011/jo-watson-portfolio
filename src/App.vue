@@ -20,7 +20,8 @@ export default {
       this.setStyle()
     },
     setStyle() {
-      const baseStyle = 'flex justify-center z-0 px-4 pt-2 pb-4 text-gray-600 min-w-[370px] max-w-[800px] '
+      const baseStyle =
+        'flex justify-center z-0 px-4 pt-2 pb-4 text-gray-600 min-w-[370px] max-w-[800px] '
       const smallWindowStyle = 'flex-wrap'
       const largeWindowStyle =
         ' bg-pink-50 absolute t-[50%] l-[50%]  border-t-4 border-l border-r-4 border-sky-500 rounded-[30px] shadow-block-page'
@@ -42,12 +43,12 @@ export default {
 </script>
 
 <template>
-  <SocialsNavigation />
   <div
     id="parent-container"
     class="absolute flex justify-center items-center overflow-y-auto w-full h-full"
   >
     <div :class="containerStyle">
+      <SocialsNavigation />
       <header class="flex flex-col">
         <HeaderContent />
         <NavList />

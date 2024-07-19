@@ -12,7 +12,7 @@ export default {
 }
 </script>
 <template>
-  <nav class="flex justify-end">
+  <nav class="absolute right-0 top-[-50px] flex justify-end">
     <div
       v-for="icon in icons"
       :key="icon.iconName"
