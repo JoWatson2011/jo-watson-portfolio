@@ -16,6 +16,14 @@ module.exports = {
         'project-card': `
         2px -2px 2px 3px lightgrey
         `
+      },
+      colors: {
+        light: {
+          background: '#FDEAEA',
+          darkBlue: 'rgb(36, 129, 166)',
+          midBlue: 'rgb(50, 186, 217)',
+          lightBlue: 'rgb(121, 242, 242)'
+        }
       }
     }
   },
