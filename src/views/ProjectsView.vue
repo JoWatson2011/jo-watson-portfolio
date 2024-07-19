@@ -1,20 +1,10 @@
 <script setup>
-import { containerStyle } from './general-styling'
-</script>
-
-<script>
-export default {
-  data() {
-    return {
-      containerStyle
-    }
-  }
-}
+import Projects from '../components/Projects.vue'
 </script>
 
 <template>
-  <div :class="containerStyle">
-    <h1>This is the projects page</h1>
+  <div>
+    <Projects />
   </div>
 </template>
 
