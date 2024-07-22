@@ -13,7 +13,11 @@ module.exports = {
         0px -0px 1px 3px black,
         2px -3px 1px 5px rgb(36, 129, 166),     
          8px -9px 6px 4px lightgrey
-
+        `,
+        'block-image-hover': `
+        0px -0px 1px 3px black,
+        1px -1px 1px 5px rgb(36, 129, 166),     
+         6px -7px 6px 4px lightgrey
         `,
         'block-dropdown': `
         0px -0px 1px 2px black,
