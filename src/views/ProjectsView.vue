@@ -3,9 +3,9 @@ import Projects from '../components/Projects.vue'
 </script>
 
 <template>
-  <div>
+  <main>
     <Projects />
-  </div>
+  </main>
 </template>
 
 <style></style>
