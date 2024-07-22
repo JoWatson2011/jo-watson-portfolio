@@ -19,7 +19,10 @@ import {
   BiArchiveFill,
   IoDocumentText,
   BiEnvelopeOpenFill,
-  BiGlobe
+  BiGlobe,
+  RiArrowUpSLine,
+  RiTestTubeLine,
+  LaUniversitySolid
 } from 'oh-vue-icons/icons'
 import './assets/tailwind.css'
 
@@ -38,7 +41,10 @@ addIcons(
   BiArchiveFill,
   IoDocumentText,
   BiEnvelopeOpenFill,
-  BiGlobe
+  BiGlobe,
+  RiArrowUpSLine,
+  RiTestTubeLine,
+  LaUniversitySolid
 )
 
 const app = createApp(App)
