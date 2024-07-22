@@ -18,7 +18,8 @@ import {
   CoSocketIo,
   BiArchiveFill,
   IoDocumentText,
-  BiEnvelopeOpenFill
+  BiEnvelopeOpenFill,
+  BiGlobe
 } from 'oh-vue-icons/icons'
 import './assets/tailwind.css'
 
@@ -36,7 +37,8 @@ addIcons(
   CoSocketIo,
   BiArchiveFill,
   IoDocumentText,
-  BiEnvelopeOpenFill
+  BiEnvelopeOpenFill,
+  BiGlobe
 )
 
 const app = createApp(App)
