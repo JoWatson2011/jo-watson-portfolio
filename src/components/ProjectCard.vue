@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-  <PostIt class="mx-10 object-contain">
+  <PostIt class="mr-1 ml-5 object-contain">
     <div class="mx-1 ">
       <div class="flex items-center justify-between">
         <h3 class="px-4 text-[25px] font-bold">{{ Title }}</h3>
@@ -38,7 +38,7 @@ export default {
       <img
         :alt="imgAltText"
         :src="imageLocation"
-        class="bg-white rounded-lg border max-h-[200px] m-auto"
+        class="bg-white rounded-lg border h-[200px] m-auto"
       />
       <p class="px-4 py-2 text-md text-black text-center">{{ description }}</p>
       <div class="flex justify-center">
