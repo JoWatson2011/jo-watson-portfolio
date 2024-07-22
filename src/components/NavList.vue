@@ -3,8 +3,7 @@ import { BiArchiveFill, IoDocumentText, BiEnvelopeOpenFill } from 'oh-vue-icons/
 </script>
 
 <template>
-  <div class="">
-    <nav class="flex flex-col justify-center items-stretch">
+    <nav class="grid grid-cols-1 mx-auto ">
       <RouterLink
         to="/projects"
         class="hover:text-light-midBlue text-lg"
@@ -12,8 +11,8 @@ import { BiArchiveFill, IoDocumentText, BiEnvelopeOpenFill } from 'oh-vue-icons/
         ><v-icon
           name="bi-archive-fill"
           scale="1.25"
-        />
-        Projects</RouterLink
+          class="mr-3"
+        />Projects</RouterLink
       >
       <RouterLink
         to="/experience"
@@ -22,6 +21,7 @@ import { BiArchiveFill, IoDocumentText, BiEnvelopeOpenFill } from 'oh-vue-icons/
         ><v-icon
           name="io-document-text"
           scale="1.25"
+          class="mr-3"
         />Experience</RouterLink
       >
       <RouterLink
@@ -31,8 +31,8 @@ import { BiArchiveFill, IoDocumentText, BiEnvelopeOpenFill } from 'oh-vue-icons/
         ><v-icon
           name="bi-envelope-open-fill"
           scale="1.25"
+          class="mr-3"
         />Contact</RouterLink
       >
     </nav>
-  </div>
 </template>
