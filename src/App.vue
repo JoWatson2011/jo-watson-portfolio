@@ -28,10 +28,10 @@ export default {
     },
     setStyle() {
       const baseStyle =
-        'flex justify-center z-0 px-4 pt-2 pb-4 text-gray-600 min-w-[370px] max-w-[800px] '
-      const smallWindowStyle = 'flex-wrap'
+        'flex justify-between z-0 px-4 pt-2 pb-4 text-gray-600  '
+      const smallWindowStyle = 'flex-col'
       const largeWindowStyle =
-        ' bg-light-background absolute t-[50%] l-[50%] rounded-[30px] shadow-block-page'
+        'w-[768px] h-[475px] bg-light-background absolute t-[50%] l-[50%] rounded-[30px] shadow-block-page'
       this.pageStyle =
         baseStyle + (this.windowSize === 'small' ? smallWindowStyle : largeWindowStyle)
 
