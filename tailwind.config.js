@@ -15,6 +15,11 @@ module.exports = {
          8px -9px 6px 4px lightgrey
 
         `,
+        'block-dropdown': `
+        0px -0px 1px 2px black,
+        2px -3px 1px 2px rgb(50, 186, 217),
+        3px -4px 1px 1px black
+        `,
         'project-card': `
         2px -2px 2px 3px lightgrey
         `
