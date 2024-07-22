@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     onSelect() {
-      console.log(this.selected)
       this.projectDetails = this.projects.filter((project) => project.Title === this.selected)[0]
     }
   },
@@ -35,7 +34,7 @@ export default {
       id="project-select"
       v-model="selected"
       @change="onSelect"
-      class="rounded-full shadow-block-dropdown"
+      class="rounded-full shadow-block-dropdown hover:shadow-button-hover hover:-translate-y-px hover:translate-x-px transition-all"
     >
       <option v-for="project in projects" :value="project.Title">{{ project.Title }}</option>
     </select>
