@@ -3,21 +3,27 @@ import HeaderContent from './components/HeaderContent.vue'
 import SocialsNavigation from './components/SocialsNavigation.vue'
 import NavList from './components/NavList.vue'
 import { RouterLink, RouterView } from 'vue-router'
+import { computed } from 'vue'
 </script>
 
 <script>
 export default {
   data() {
     return {
-      windowWidth: window.innerWidth,
+      windowSize: window.innerWidth < 750 ? 'small' : 'large',
       pageStyle: '',
       containerStyle: ''
+    }
+  },
+  provide() {
+    return {
+      windowSize: computed(() => this.windowSize)
     }
   },
 
   methods: {
     onResize() {
-      this.windowWidth = window.innerWidth
+      this.windowSize = window.innerWidth < 750 ? 'small' : 'large'
       this.setStyle()
     },
     setStyle() {
@@ -26,10 +32,11 @@ export default {
       const smallWindowStyle = 'flex-wrap'
       const largeWindowStyle =
         ' bg-light-background absolute t-[50%] l-[50%] rounded-[30px] shadow-block-page'
-      this.pageStyle = baseStyle + (this.windowWidth < 750 ? smallWindowStyle : largeWindowStyle)
+      this.pageStyle =
+        baseStyle + (this.windowSize === 'small' ? smallWindowStyle : largeWindowStyle)
 
       this.containerStyle =
-        this.windowWidth < 750
+        this.windowSize === 'small'
           ? ''
           : 'absolute flex justify-center items-center overflow-y-auto w-full h-full'
     }
@@ -50,15 +57,16 @@ export default {
 <template>
   <div id="container" :class="containerStyle">
     <div :class="pageStyle">
-      <SocialsNavigation />
+      <SocialsNavigation v-if="windowSize === 'large'" />
       <header class="flex flex-col">
         <HeaderContent />
         <NavList />
       </header>
-      <RouterView v-if="windowWidth >= 750" />
+      <RouterView v-if="windowSize === 'large'" />
       <div v-else class="bg-light-background rounded-[30px] shadow-block-page my-8 pb-4">
         <RouterView />
       </div>
+      <SocialsNavigation v-if="windowSize === 'small'" />
     </div>
   </div>
 </template>
