@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       windowWidth: window.innerWidth,
+      pageStyle: '',
       containerStyle: ''
     }
   },
@@ -25,8 +26,12 @@ export default {
       const smallWindowStyle = 'flex-wrap'
       const largeWindowStyle =
         ' bg-light-background absolute t-[50%] l-[50%] rounded-[30px] shadow-block-page'
+      this.pageStyle = baseStyle + (this.windowWidth < 750 ? smallWindowStyle : largeWindowStyle)
+
       this.containerStyle =
-        baseStyle + (this.windowWidth < 750 ? smallWindowStyle : largeWindowStyle)
+        this.windowWidth < 750
+          ? ''
+          : 'absolute flex justify-center items-center overflow-y-auto w-full h-full'
     }
   },
   mounted() {
@@ -43,17 +48,17 @@ export default {
 </script>
 
 <template>
-  <div
-    id="parent-container"
-    class="absolute flex justify-center items-center overflow-y-auto w-full h-full"
-  >
-    <div :class="containerStyle">
+  <div id="container" :class="containerStyle">
+    <div :class="pageStyle">
       <SocialsNavigation />
       <header class="flex flex-col">
         <HeaderContent />
         <NavList />
       </header>
-      <RouterView />
+      <RouterView v-if="windowWidth >= 750" />
+      <div v-else class="bg-light-background rounded-[30px] shadow-block-page my-8 pb-4">
+        <RouterView />
+      </div>
     </div>
   </div>
 </template>
