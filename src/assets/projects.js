@@ -1,7 +1,8 @@
 const projects = [
   {
     Title: 'RumbleQuiz',
-    imageLocation: '',
+    imageLocation:
+      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/rumble-quiz.jpeg?raw=true',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et.',
     frontEndURL: 'https://github.com/JoWatson2011/rumble-quiz-app',
@@ -17,7 +18,8 @@ const projects = [
   },
   {
     Title: 'NC news',
-    imageLocation: '',
+    imageLocation:
+      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/nc-news.png?raw=true',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et.',
     frontEndURL: 'https://github.com/JoWatson2011/fe-nc-news',
@@ -43,7 +45,8 @@ const projects = [
   },
   {
     Title: 'SubcellulaRVis',
-    imageLocation: '',
+    imageLocation:
+      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/subcellularvis.png?raw=true',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et.',
     frontEndURL: 'https://github.com/JoWatson2011/subcellularvis',
