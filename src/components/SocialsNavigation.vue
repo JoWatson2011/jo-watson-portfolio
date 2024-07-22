@@ -24,7 +24,6 @@ export default {
   },
   watch: {
     appSize(size) {
-      console.log(this.appSize)
       this.setStyle()
     }
   }
