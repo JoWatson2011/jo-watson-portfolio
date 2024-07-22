@@ -4,7 +4,7 @@ const projects = [
     imageLocation:
       'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/rumble-quiz.jpeg?raw=true',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et.',
+      'A mobile, multiplayer trivia game',
     frontEndURL: 'https://github.com/JoWatson2011/rumble-quiz-app',
     backEndURL: 'https://github.com/JoWatson2011/rumble-quiz-server',
     hostedURL: '',
@@ -13,7 +13,7 @@ const projects = [
       { name: 'si-express', label: 'express' },
       { name: 'vi-file-type-pgsql', label: 'PSQL' },
       { name: 'co-socket-io', label: 'SocketIo' },
-      { name: 'vi-file-type-react-js', label: 'ReactNative' }
+      { name: 'vi-file-type-reactjs', label: 'ReactNative' }
     ]
   },
   {
@@ -21,26 +21,27 @@ const projects = [
     imageLocation:
       'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/nc-news.png?raw=true',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et.',
+      'A social news app where users can post, comment and vote on articles.',
     frontEndURL: 'https://github.com/JoWatson2011/fe-nc-news',
     backEndURL: 'https://github.com/JoWatson2011/nc-news',
-    hostedURL: '',
+    hostedURL: 'https://jowatson-portfolio-nc-news.netlify.app',
     techStackIcons: [
       { name: 'vi-file-type-js-official', label: 'JavaScript' },
       { name: 'si-express', label: 'express' },
       { name: 'vi-file-type-pgsql', label: 'PSQL' },
-      { name: 'vi-file-type-react-js', label: 'React' },
+      { name: 'vi-file-type-reactjs', label: 'React' },
       { name: 'vi-file-type-tailwind', label: 'Tailwindcss' }
     ]
   },
   {
     Title: 'Pokemon CLI Battler',
-    imageLocation: '',
+    imageLocation:
+      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/pokemon-battler-terminal.png?raw=true',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et.',
+      'An interactive command-line game based on a Pokemon battle.',
     backEndURL: 'https://github.com/JoWatson2011/pokemon-battler/tree/main',
     frontEndURL: null,
-    hostedURL: '',
+    hostedURL: null,
     techStackIcons: [{ name: 'vi-file-type-js-official', label: 'JavaScript' }]
   },
   {
@@ -48,7 +49,7 @@ const projects = [
     imageLocation:
       'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/subcellularvis.png?raw=true',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et.',
+      'A web app to facilitate analysis and understanding of protein localisation from high-throughput biological experiments.',
     frontEndURL: 'https://github.com/JoWatson2011/subcellularvis',
     backEndURL: null,
     hostedURL: 'phenome.manchester.ac.uk/subcellular',
