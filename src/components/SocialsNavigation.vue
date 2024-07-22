@@ -1,18 +1,37 @@
 <script>
 export default {
+  inject: ['windowSize'],
   data() {
     return {
+      appSize: this.windowSize,
       icons: [
         { iconName: 'co-github', url: 'https://github.com/JoWatson2011' },
         { iconName: 'bi-linkedin', url: 'https://www.linkedin.com/in/jolwatson/' }
       ],
-      buttonStyle: ''
+      styling: ''
+    }
+  },
+  mounted() {
+    this.setStyle()
+  },
+  methods: {
+    setStyle() {
+      this.styling =
+        this.appSize === 'large'
+          ? 'absolute right-0 top-[-50px] flex justify-end'
+          : ' flex justify-center mb-3'
+    }
+  },
+  watch: {
+    appSize(size) {
+      console.log(this.appSize)
+      this.setStyle()
     }
   }
 }
 </script>
 <template>
-  <nav class="absolute right-0 top-[-50px] flex justify-end">
+  <nav :class="styling">
     <div
       v-for="icon in icons"
       :key="icon.iconName"
