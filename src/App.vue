@@ -58,7 +58,7 @@ export default {
   <div id="container" :class="containerStyle">
     <div :class="pageStyle">
       <SocialsNavigation v-if="windowSize === 'large'" />
-      <header class="flex flex-col">
+      <header class="flex flex-col justify-center justify-items-center">
         <HeaderContent />
         <NavList />
       </header>
