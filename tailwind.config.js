@@ -20,6 +20,11 @@ module.exports = {
         2px -3px 1px 2px rgb(50, 186, 217),
         3px -4px 1px 1px black
         `,
+        'button-hover': `
+        0px -0px 1px 2px black,
+        1px -2px 1px 2px rgb(50, 186, 217),
+        2px -3px 1px 1px black
+        `,
         'project-card': `
         2px -2px 2px 3px lightgrey
         `
