@@ -1,19 +1,19 @@
 <script setup>
-import { containerStyle } from './general-styling'
+import ExperienceItem from '../components/ExperienceItem.vue'
+import experience from '../assets/experience.js'
 </script>
-
 <script>
 export default {
   data() {
     return {
-      containerStyle
+      experience
     }
   }
 }
 </script>
 
 <template>
-  <main :class="containerStyle">
-
-  </main>
+    <main class="justify-self-start">
+      <ExperienceItem v-for="item in experience" :details="item" />
+    </main>
 </template>
