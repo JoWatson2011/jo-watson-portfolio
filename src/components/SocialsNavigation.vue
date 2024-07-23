@@ -26,7 +26,7 @@ export default {
       this.styling =
         this.appSize === 'large'
           ? 'absolute left-[25%] bottom-[-80px] flex justify-end'
-          : ' flex justify-center mb-3'
+          : 'flex justify-around mb-3'
     }
   },
   watch: {
