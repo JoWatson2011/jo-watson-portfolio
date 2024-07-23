@@ -1,3 +1,6 @@
+<script setup>
+import ExternalLinkButton from './ExternalLinkButton.vue'
+</script>
 <script>
 export default {
   inject: ['windowSize'],
@@ -5,8 +8,12 @@ export default {
     return {
       appSize: this.windowSize,
       icons: [
-        { iconName: 'co-github', url: 'https://github.com/JoWatson2011' },
-        { iconName: 'bi-linkedin', url: 'https://www.linkedin.com/in/jolwatson/' }
+        { iconName: 'co-github', url: 'https://github.com/JoWatson2011', text: 'Follow on Github' },
+        {
+          iconName: 'bi-linkedin',
+          url: 'https://www.linkedin.com/in/jolwatson/',
+          text: 'Connect on LinkedIn'
+        }
       ],
       styling: ''
     }
@@ -31,12 +38,18 @@ export default {
 </script>
 <template>
   <nav :class="styling">
-    <div
+    <ExternalLinkButton
+      v-for="icon in icons"
+      :iconName="icon.iconName"
+      :url="icon.url"
+      :text="icon.text"
+    />
+    <!-- <div
       v-for="icon in icons"
       :key="icon.iconName"
       class="rounded-full hover:opacity-100 p-1 mt-1 mr-1 opacity-50"
     >
       <a :href="icon.url"><v-icon :name="icon.iconName" scale="1.5" /></a>
-    </div>
+    </div> -->
   </nav>
 </template>
