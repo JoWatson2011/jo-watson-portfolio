@@ -32,3 +32,5 @@ coverage
 /src/components/__tests__/HelloWorld.spec.js
 /src/components/WelcomeItem.vue
 /src/components/TheWelcome.vue
+
+*.env
