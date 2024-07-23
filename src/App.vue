@@ -60,13 +60,13 @@ export default {
       <SocialsNavigation v-if="windowSize === 'large'" />
       <header class="flex flex-col justify-center justify-items-center">
         <HeaderContent />
+        <SocialsNavigation v-if="windowSize === 'small'" />
         <NavList />
       </header>
       <RouterView v-if="windowSize === 'large'" />
       <div v-else class="bg-light-background rounded-[30px] shadow-block-page my-8 pb-4">
         <RouterView />
       </div>
-      <SocialsNavigation v-if="windowSize === 'small'" />
     </div>
   </div>
 </template>
