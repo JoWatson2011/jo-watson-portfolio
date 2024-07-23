@@ -25,7 +25,7 @@ export default {
     setStyle() {
       this.styling =
         this.appSize === 'large'
-          ? 'absolute right-0 top-[-50px] flex justify-end'
+          ? 'absolute left-[25%] bottom-[-80px] flex justify-end'
           : ' flex justify-center mb-3'
     }
   },
