@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center pt-8 pb-8">
+  <div class="flex flex-col items-center justify-center pt-8 pb-4">
     <RouterLink to="/">
       <img
         alt="stardew-valley-avatar"
