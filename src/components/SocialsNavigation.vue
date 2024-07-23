@@ -6,7 +6,6 @@ export default {
   inject: ['windowSize'],
   data() {
     return {
-      appSize: this.windowSize,
       icons: [
         { iconName: 'co-github', url: 'https://github.com/JoWatson2011', text: 'Follow on Github' },
         {
@@ -24,13 +23,13 @@ export default {
   methods: {
     setStyle() {
       this.styling =
-        this.appSize === 'large'
+        this.windowSize === 'large'
           ? 'absolute left-[25%] bottom-[-80px] flex justify-end'
-          : 'flex justify-around mb-3'
+          : 'flex justify-around mb-3 -translate-y-6'
     }
   },
   watch: {
-    appSize(size) {
+    windowSize(size) {
       this.setStyle()
     }
   }
