@@ -2,7 +2,7 @@ const projects = [
   {
     Title: 'RumbleQuiz',
     imageLocation:
-      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/rumble-quiz.jpeg?raw=true',
+      'rumble-quiz.jpeg',
     description:
       'A multiplayer trivia game built for mobile. Select a topic and play head-to-head against other players.',
     frontEndURL: 'https://github.com/JoWatson2011/rumble-quiz-app',
@@ -19,7 +19,7 @@ const projects = [
   {
     Title: 'NC news',
     imageLocation:
-      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/nc-news.png?raw=true',
+      'nc-news.png',
     description: 'A social news app where users can post, comment and vote on articles.',
     frontEndURL: 'https://github.com/JoWatson2011/fe-nc-news',
     backEndURL: 'https://github.com/JoWatson2011/nc-news',
@@ -35,7 +35,7 @@ const projects = [
   {
     Title: 'Pokemon CLI Battler',
     imageLocation:
-      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/pokemon-battler-terminal.png?raw=true',
+      'pokemon-battler-terminal.png',
     description: 'An interactive command-line game based on a Pokemon battle.',
     backEndURL: 'https://github.com/JoWatson2011/pokemon-battler/tree/main',
     frontEndURL: null,
@@ -45,7 +45,7 @@ const projects = [
   {
     Title: 'SubcellulaRVis',
     imageLocation:
-      'https://github.com/JoWatson2011/portfolio-website/blob/main/src/assets/project-card-images/subcellularvis.png?raw=true',
+      'subcellularvis.png',
     description:
       'A web app to facilitate analysis of data from high-throughput biological experiments.',
     frontEndURL: 'https://github.com/JoWatson2011/subcellularvis',
