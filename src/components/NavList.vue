@@ -6,7 +6,7 @@ import { BiArchiveFill, IoDocumentText, BiEnvelopeOpenFill } from 'oh-vue-icons/
 export default {
   inject: ['windowSize'],
   data() {
-    return { navStyle: '' }
+    return { navStyle: '', iconStyle: '' }
   },
   mounted() {
     this.setStyle()
@@ -18,6 +18,8 @@ export default {
         this.windowSize === 'large'
           ? 'grid grid-cols-1 mx-auto'
           : 'flex justify-around translate-y-3'
+
+      this.iconStyle = this.windowSize === 'large' ? 'mr-3' : ''
     }
   },
   watch: {
@@ -33,20 +35,20 @@ export default {
     <RouterLink
       to="/projects"
       class="hover:text-light-midBlue text-lg"
-      activeClass="font-extrabold text-light-darkBlue"
-      ><v-icon name="bi-archive-fill" scale="1.25" class="mr-3" />Projects</RouterLink
+      activeClass="text-light-darkBlue"
+      ><v-icon name="bi-archive-fill" scale="1.25" :class="iconStyle" />Projects</RouterLink
     >
     <RouterLink
       to="/experience"
       class="hover:text-light-midBlue text-lg"
-      activeClass="font-extrabold text-light-darkBlue"
-      ><v-icon name="io-document-text" scale="1.25" class="mr-3" />Experience</RouterLink
+      activeClass="text-light-darkBlue"
+      ><v-icon name="io-document-text" scale="1.25" :class="iconStyle" />Experience</RouterLink
     >
     <RouterLink
       to="/contact"
       class="hover:text-light-midBlue text-lg"
-      activeClass="font-extrabold text-light-darkBlue"
-      ><v-icon name="bi-envelope-open-fill" scale="1.25" class="mr-3" />Contact</RouterLink
+      activeClass="text-light-darkBlue"
+      ><v-icon name="bi-envelope-open-fill" scale="1.25" :class="iconStyle" />Contact</RouterLink
     >
   </nav>
 </template>
