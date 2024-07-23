@@ -17,7 +17,7 @@ export default {
       this.scrollContainer =
         this.appSize === 'large'
           ? 'overflow-scroll scroll-smooth bg-light-lightBlue/10 ml-5 my-5 p-2 border rounded-lg border-gray-900'
-          : ''
+          : 'mt-4 mx-4'
     }
   },
   mounted() {
