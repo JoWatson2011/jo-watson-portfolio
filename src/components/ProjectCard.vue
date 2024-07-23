@@ -61,7 +61,7 @@ export default {
         <img
           :src="getImageUrl()"
           :alt="getImageAlt()"
-          class="bg-white rounded-lg border h-[200px] m-auto"
+          class="bg-white rounded-lg border max-h-[200px] m-auto"
         />
         <p class="px-4 py-2 text-md text-black text-center">{{ description }}</p>
         <div class="flex justify-center">
