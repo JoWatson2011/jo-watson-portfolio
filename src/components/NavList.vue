@@ -13,7 +13,6 @@ export default {
   },
   methods: {
     setStyle() {
-      console.log('fired!', this.windowSize)
       this.navStyle =
         this.windowSize === 'large'
           ? 'grid grid-cols-1 mx-auto'
