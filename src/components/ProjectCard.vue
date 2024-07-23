@@ -13,20 +13,24 @@ export default {
     hostedURL: String,
     techStackIcons: Object
   },
-  data() {
-    return {
-      imgAltText: this.Title
+  methods: {
+    getImageUrl() {
+      return new URL(`../assets/project-card-images/${this.imageLocation}`, import.meta.url)
+    },
+    getImageAlt() {
+      return `${this.Title} screenshot`
     }
   }
+
 }
 </script>
 
 <template>
   <PostIt class="mr-1 ml-5 object-contain">
-    <div class="mx-1 ">
+    <div class="mx-1">
       <div class="flex items-center justify-between">
         <h3 class="px-4 text-[25px] font-bold">{{ Title }}</h3>
-        <div class="flex justify-center p-2">
+        <div class="flex flex-wrap justify-center p-2">
           <v-icon
             v-for="icon in techStackIcons"
             :name="icon.name"
@@ -36,8 +40,8 @@ export default {
         </div>
       </div>
       <img
-        :alt="imgAltText"
-        :src="imageLocation"
+        :src="getImageUrl()"
+        :alt="getImageAlt()"
         class="bg-white rounded-lg border h-[200px] m-auto"
       />
       <p class="px-4 py-2 text-md text-black text-center">{{ description }}</p>
