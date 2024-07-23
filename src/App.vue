@@ -10,7 +10,7 @@ import { computed } from 'vue'
 export default {
   data() {
     return {
-      windowSize: window.innerWidth < 750 ? 'small' : 'large',
+      windowSize: window.innerWidth < 775 ? 'small' : 'large',
       pageStyle: '',
       containerStyle: ''
     }
@@ -23,7 +23,7 @@ export default {
 
   methods: {
     onResize() {
-      this.windowSize = window.innerWidth < 750 ? 'small' : 'large'
+      this.windowSize = window.innerWidth < 775 ? 'small' : 'large'
       this.setStyle()
     },
     setStyle() {
