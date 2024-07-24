@@ -1,8 +1,10 @@
 <script setup>
 import PostIt from '../components/PostIt.vue'
+import Bio from '../components/Bio.vue'
 </script>
 <script>
 export default {
+  inject: ['windowSize'],
   data() {
     return {
       icons: [
@@ -10,7 +12,21 @@ export default {
         'vi-file-type-python',
         'vi-file-type-pgsql',
         'vi-file-type-rproj'
-      ]
+      ],
+      styling: ''
+    }
+  },
+  mounted() {
+    this.setStyle()
+  },
+  methods: {
+    setStyle() {
+      this.styling = this.windowSize === 'large' ? 'mr-5 ml-10' : 'max-w-[360px] m-auto'
+    }
+  },
+  watch: {
+    windowSize(size) {
+      this.setStyle()
     }
   }
 }
@@ -22,20 +38,10 @@ export default {
       <v-icon v-for="icon in icons" :name="icon" scale="2.5" />
     </div>
     <br />
-      <PostIt class="mx-10"d>
-        <h3 class="text-xl px-8 font-bold">Welcome!</h3>
-        <p class="text-justify text-sm leading-tight px-8 pb-4">
-          <span class="font-semibold">
-            I am a scientist turned software developer. My scientific background means I am curious,
-            analytical and always pushing myself to learn new things, all of which feed into my work
-            as a developer.
-          </span>
-          <br />
-          I have recently completed the
-          Northcoders software development bootcamp and I am now actively looking for my first role
-          in tech. I have built front- and back-end projects using a range of JavaScript frameworks and bring
-          a strong background in data handling (including databases), analysis and visualisation.
-        </p>
+    <div class="mx-3">
+      <PostIt :class="styling">
+        <Bio />
       </PostIt>
+    </div>
   </main>
 </template>
