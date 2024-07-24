@@ -31,11 +31,10 @@ export default {
             as a developer.
           </span>
           <br />
-          The most rewarding part of my scientific work was building my own pieces of software to
-          automate my data analysis and sharing these tools with my colleagues. This led me to
-          change my career and pursue software development. I have recently completed the
+          I have recently completed the
           Northcoders software development bootcamp and I am now actively looking for my first role
-          in tech
+          in tech. I have built front- and back-end projects using a range of JavaScript frameworks and bring
+          a strong background in data handling (including databases), analysis and visualisation.
         </p>
       </PostIt>
   </main>
