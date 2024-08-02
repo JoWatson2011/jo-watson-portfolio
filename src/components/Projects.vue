@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex justify-center my-4">
+  <div class="flex justify-center my-4" data-cy="projects">
     <label for="project-select" class="mr-5 text-black font-medium">Select a project: </label>
     <select
       name="project"

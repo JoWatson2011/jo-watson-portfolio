@@ -32,9 +32,7 @@ export default {
 </script>
 
 <template>
-  <div
-    :class="scrollContainer"
-  >
+  <div :class="scrollContainer" data-cy="experience">
     <main class="justify-self-start">
       <ExperienceItem v-for="item in experience" :details="item" />
     </main>

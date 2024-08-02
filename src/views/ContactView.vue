@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-  <div class="my-8 mx-10">
+  <div class="my-8 mx-10" data-cy="contact">
     <p class="text-black pb-3 text-center">
       I'd love to hear from you if you have any feedback on this website or any opportunities
       available!
