@@ -32,8 +32,8 @@ export default {
 }
 </script>
 
-<template>
-  <main>
+<template >
+  <main data-cy="home-view">
     <div class="flex justify-center p-2">
       <v-icon v-for="icon in icons" :name="icon" scale="2.5" />
     </div>

@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <nav :class="navStyle">
+  <nav :class="navStyle" data-cy="nav-list">
     <RouterLink
       to="/projects"
       class="hover:text-light-midBlue text-lg underline underline-offset-4"
