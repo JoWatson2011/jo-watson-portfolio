@@ -47,7 +47,22 @@ describe('Navigation', () => {
   it('Navigates to /contact when Contact is selected from the NavList', () => {
     cy.visit('/')
     cy.get('[data-cy="contact-link"]').click()
-    cy.location('pathname').should('equal', "/contact")
+    cy.location('pathname').should('equal', '/contact')
     cy.get('[data-cy="contact"]').should('exist')
+  })
+})
+
+describe('/projects -> Select projects by dropdown', () => {
+  beforeEach(() => {
+    cy.visit('/projects')
+  })
+  it('Lists all the projects', () => {
+    const projects = require('../../src/assets/projects')
+    cy.get('#project-select').children().should('have.length', projects.length)
+  })
+  it('changes the project displayed when a project is selected', () => {
+    cy.get('h3').contains('NC news')
+    cy.get('#project-select').select("RumbleQuiz")
+    cy.get("h3").contains("RumbleQuiz")
   })
 })
