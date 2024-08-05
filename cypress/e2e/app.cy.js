@@ -1,3 +1,5 @@
+import emailjs from '@emailjs/browser'
+
 describe('Navigation', () => {
   it('Renders the home view on root', () => {
     cy.visit('/')
@@ -62,25 +64,37 @@ describe('/projects -> Select projects by dropdown', () => {
   })
   it('changes the project displayed when a project is selected', () => {
     cy.get('h3').contains('NC news')
-    cy.get('#project-select').select("RumbleQuiz")
-    cy.get("h3").contains("RumbleQuiz")
+    cy.get('#project-select').select('RumbleQuiz')
+    cy.get('h3').contains('RumbleQuiz')
   })
 })
 
-describe("/contact -> contact form", () => {
+describe('/contact -> contact form', () => {
   beforeEach(() => {
-    cy.visit("/contact")
+    cy.visit('/contact')
   })
-  it("should be empty by default", () => {
+  it('should be empty by default', () => {
     cy.get('#from_name').should('be.empty')
     cy.get('#from_email').should('be.empty')
     cy.get('#message').should('be.empty')
   })
-  // it("should not allow submission if any fields are empty")
+  // it("should not allow submission if any fields are empty", () => {
+  //   cy.get("form button").click()
+  // })
   // it("displays a message saying fields are empty")
   // it("should not allow submission if email address isn't valid")
   // it("displays a message saying the email address isn't valid")
-  // it("empties all the fields when the form has been successfully submitted")
+  xit('empties all the fields when the form has been successfully submitted', () => {
+    cy.get('#from_name').type('Test')
+    cy.get('#from_email').type('TestEmail@email.com')
+    cy.get('#message').type('This is a test')
+    cy.get('form button').click()
+
+    cy.get('#from_name').should('be.empty')
+    cy.get('#from_email').should('be.empty')
+    cy.get('#message').should('be.empty')
+    cy.get('[data-cy="email-user-feedback"]').should('have.text', 'Thank you for your email!')
+  })
   // it("displays a message if a form was sent successfully")
   // it("displays a message if the form wasn't sent successfully due to a network error")
 })

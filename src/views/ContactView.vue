@@ -1,5 +1,4 @@
 <script setup>
-import ExternalLinkButton from '../components/ExternalLinkButton.vue'
 import emailjs from '@emailjs/browser'
 </script>
 
@@ -9,10 +8,14 @@ export default {
     return {
       from_name: '',
       from_email: '',
-      message: ''
+      message: '',
+      userFeedback: ''
     }
   },
   methods: {
+    setUserFeedback(msg) {
+      this.userFeedback = msg
+    },
     submitForm() {
       emailjs
         .sendForm(
@@ -24,11 +27,10 @@ export default {
           }
         )
         .then(() => {
-          console.log('Thank you for your email!')
+          this.setUserFeedback('Thank you for your email!')
         })
         .catch((error) => {
-          console.log('Error sending email', error)
-          alert('Failed to send message. Please try again later.')
+          this.setUserFeedback('Failed to send message. Please try again later.')
         })
     }
   }
@@ -81,6 +83,7 @@ export default {
       >
         Send
       </button>
+      <p v-if="userFeedback" class=" text-center"  data-cy="email-user-feedback">{{ userFeedback }}</p>
     </form>
   </div>
 </template>
