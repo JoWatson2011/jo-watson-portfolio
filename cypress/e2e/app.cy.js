@@ -78,10 +78,10 @@ describe('/contact -> contact form', () => {
     cy.get('#from_email').should('be.empty')
     cy.get('#message').should('be.empty')
   })
-  // it("should not allow submission if any fields are empty", () => {
-  //   cy.get("form button").click()
-  // })
-  // it("displays a message saying fields are empty")
+  it('should not allow submission if any fields are empty', () => {
+    cy.get('form button').click()
+    cy.get('[data-cy="email-user-feedback"]').should('have.text', 'Please fill in all fields.')
+  })
   // it("should not allow submission if email address isn't valid")
   // it("displays a message saying the email address isn't valid")
   xit('empties all the fields when the form has been successfully submitted', () => {

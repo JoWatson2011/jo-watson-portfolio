@@ -17,6 +17,10 @@ export default {
       this.userFeedback = msg
     },
     submitForm() {
+      if ([this.from_name, this.from_email, this.from_message].some((field) => field === '')) {
+        this.setUserFeedback('Please fill in all fields.')
+        return
+      }
       emailjs
         .sendForm(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -52,7 +56,6 @@ export default {
           id="from_name"
           name="from_name"
           class="mt-1 p-2 w-full border border-gray-300 rounded-md"
-          required
         />
       </div>
       <div class="mb-4">
@@ -63,7 +66,6 @@ export default {
           id="from_email"
           name="from_email"
           class="mt-1 p-2 w-full border border-gray-300 rounded-md"
-          required
         />
       </div>
       <div class="mb-4">
@@ -74,7 +76,6 @@ export default {
           name="message"
           class="mt-1 p-2 w-full border border-gray-300 rounded-md"
           rows="3"
-          required
         ></textarea>
       </div>
       <button
@@ -83,7 +84,9 @@ export default {
       >
         Send
       </button>
-      <p v-if="userFeedback" class=" text-center"  data-cy="email-user-feedback">{{ userFeedback }}</p>
+      <p v-if="userFeedback" class="text-center" data-cy="email-user-feedback">
+        {{ userFeedback }}
+      </p>
     </form>
   </div>
 </template>
