@@ -66,3 +66,21 @@ describe('/projects -> Select projects by dropdown', () => {
     cy.get("h3").contains("RumbleQuiz")
   })
 })
+
+describe("/contact -> contact form", () => {
+  beforeEach(() => {
+    cy.visit("/contact")
+  })
+  it("should be empty by default", () => {
+    cy.get('#from_name').should('be.empty')
+    cy.get('#from_email').should('be.empty')
+    cy.get('#message').should('be.empty')
+  })
+  // it("should not allow submission if any fields are empty")
+  // it("displays a message saying fields are empty")
+  // it("should not allow submission if email address isn't valid")
+  // it("displays a message saying the email address isn't valid")
+  // it("empties all the fields when the form has been successfully submitted")
+  // it("displays a message if a form was sent successfully")
+  // it("displays a message if the form wasn't sent successfully due to a network error")
+})
