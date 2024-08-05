@@ -9,16 +9,26 @@ export default {
       from_name: '',
       from_email: '',
       message: '',
-      userFeedback: ''
+      userFeedback: '',
     }
   },
   methods: {
     setUserFeedback(msg) {
       this.userFeedback = msg
     },
+    checkEmailValid(emailInput) {
+      const emailValidRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+
+      return !emailValidRegex.test(emailInput)
+    },
     submitForm() {
       if ([this.from_name, this.from_email, this.from_message].some((field) => field === '')) {
         this.setUserFeedback('Please fill in all fields.')
+        return
+      }
+      if (this.checkEmailValid(this.from_email)) {
+        this.setUserFeedback('Please enter a valid email address.')
         return
       }
       emailjs
@@ -61,7 +71,7 @@ export default {
       <div class="mb-4">
         <label for="from_email" class="text-sm font-medium text-gray-700">Email</label>
         <input
-          type="email"
+          type="text"
           v-model="from_email"
           id="from_email"
           name="from_email"

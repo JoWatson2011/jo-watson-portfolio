@@ -1,4 +1,4 @@
-import emailjs from '@emailjs/browser'
+import { mockResponseStatusCode, clickSubmitButton } from './utils'
 
 describe('Navigation', () => {
   it('Renders the home view on root', () => {
@@ -71,28 +71,45 @@ describe('/projects -> Select projects by dropdown', () => {
 
 describe('/contact -> contact form', () => {
   beforeEach(() => {
+    mockResponseStatusCode(204)
+
     cy.visit('/contact')
   })
   it('should be empty by default', () => {
     cy.get('#from_name').should('be.empty')
     cy.get('#from_email').should('be.empty')
     cy.get('#message').should('be.empty')
+    cy.get(`@submit`).should('be.null')
+
   })
   it('should not allow submission if any fields are empty', () => {
     cy.get('form button').click()
     cy.get('[data-cy="email-user-feedback"]').should('have.text', 'Please fill in all fields.')
+    cy.get(`@submit`).should('be.null')
+
   })
-  // it("should not allow submission if email address isn't valid")
-  // it("displays a message saying the email address isn't valid")
-  xit('empties all the fields when the form has been successfully submitted', () => {
+  it("displays a message if the email address isn't valid", () => {
+    cy.get('#from_name').type('Test')
+    cy.get('#from_email').type('notanemail!!!')
+    cy.get('#message').type('This is a test')
+    clickSubmitButton()
+
+    cy.get('[data-cy="email-user-feedback"]').should(
+      'have.text',
+      'Please enter a valid email address.'
+    )
+    cy.get(`@submit`).should('be.null')
+  })
+  it('empties all the fields when the form has been successfully submitted', () => {
     cy.get('#from_name').type('Test')
     cy.get('#from_email').type('TestEmail@email.com')
     cy.get('#message').type('This is a test')
-    cy.get('form button').click()
+    clickSubmitButton()
 
     cy.get('#from_name').should('be.empty')
     cy.get('#from_email').should('be.empty')
     cy.get('#message').should('be.empty')
+    cy.get(`@submit`).should('not.be.null')
     cy.get('[data-cy="email-user-feedback"]').should('have.text', 'Thank you for your email!')
   })
   // it("displays a message if a form was sent successfully")
