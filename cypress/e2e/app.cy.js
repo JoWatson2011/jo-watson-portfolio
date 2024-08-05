@@ -80,13 +80,11 @@ describe('/contact -> contact form', () => {
     cy.get('#from_email').should('be.empty')
     cy.get('#message').should('be.empty')
     cy.get(`@submit`).should('be.null')
-
   })
   it('should not allow submission if any fields are empty', () => {
     cy.get('form button').click()
     cy.get('[data-cy="email-user-feedback"]').should('have.text', 'Please fill in all fields.')
     cy.get(`@submit`).should('be.null')
-
   })
   it("displays a message if the email address isn't valid", () => {
     cy.get('#from_name').type('Test')
@@ -112,6 +110,17 @@ describe('/contact -> contact form', () => {
     cy.get(`@submit`).should('not.be.null')
     cy.get('[data-cy="email-user-feedback"]').should('have.text', 'Thank you for your email!')
   })
-  // it("displays a message if a form was sent successfully")
-  // it("displays a message if the form wasn't sent successfully due to a network error")
+  it("displays a message if the form wasn't sent successfully due to a network error", () => {
+    mockResponseStatusCode(500)
+
+    cy.get('#from_name').type('Test')
+    cy.get('#from_email').type('TestEmail@email.com')
+    cy.get('#message').type('This is a test')
+    clickSubmitButton()
+
+    cy.get('[data-cy="email-user-feedback"]').should(
+      'have.text',
+      'Failed to send message. Please try again later.'
+    )
+  })
 })
