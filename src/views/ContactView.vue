@@ -1,5 +1,4 @@
 <script setup>
-import ExternalLinkButton from '../components/ExternalLinkButton.vue'
 import emailjs from '@emailjs/browser'
 </script>
 
@@ -9,11 +8,29 @@ export default {
     return {
       from_name: '',
       from_email: '',
-      message: ''
+      message: '',
+      userFeedback: '',
     }
   },
   methods: {
+    setUserFeedback(msg) {
+      this.userFeedback = msg
+    },
+    checkEmailValid(emailInput) {
+      const emailValidRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+
+      return !emailValidRegex.test(emailInput)
+    },
     submitForm() {
+      if ([this.from_name, this.from_email, this.from_message].some((field) => field === '')) {
+        this.setUserFeedback('Please fill in all fields.')
+        return
+      }
+      if (this.checkEmailValid(this.from_email)) {
+        this.setUserFeedback('Please enter a valid email address.')
+        return
+      }
       emailjs
         .sendForm(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -24,11 +41,10 @@ export default {
           }
         )
         .then(() => {
-          console.log('Thank you for your email!')
+          this.setUserFeedback('Thank you for your email!')
         })
         .catch((error) => {
-          console.log('Error sending email', error)
-          alert('Failed to send message. Please try again later.')
+          this.setUserFeedback('Failed to send message. Please try again later.')
         })
     }
   }
@@ -36,7 +52,7 @@ export default {
 </script>
 
 <template>
-  <div class="my-8 mx-10">
+  <div class="my-8 mx-10" data-cy="contact">
     <p class="text-black pb-3 text-center">
       I'd love to hear from you if you have any feedback on this website or any opportunities
       available!
@@ -50,18 +66,16 @@ export default {
           id="from_name"
           name="from_name"
           class="mt-1 p-2 w-full border border-gray-300 rounded-md"
-          required
         />
       </div>
       <div class="mb-4">
         <label for="from_email" class="text-sm font-medium text-gray-700">Email</label>
         <input
-          type="email"
+          type="text"
           v-model="from_email"
           id="from_email"
           name="from_email"
           class="mt-1 p-2 w-full border border-gray-300 rounded-md"
-          required
         />
       </div>
       <div class="mb-4">
@@ -72,7 +86,6 @@ export default {
           name="message"
           class="mt-1 p-2 w-full border border-gray-300 rounded-md"
           rows="3"
-          required
         ></textarea>
       </div>
       <button
@@ -81,6 +94,9 @@ export default {
       >
         Send
       </button>
+      <p v-if="userFeedback" class="text-center" data-cy="email-user-feedback">
+        {{ userFeedback }}
+      </p>
     </form>
   </div>
 </template>

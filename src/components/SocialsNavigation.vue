@@ -36,7 +36,7 @@ export default {
 }
 </script>
 <template>
-  <nav :class="styling">
+  <nav :class="styling" data-cy="socials-navigation">
     <ExternalLinkButton
       v-for="icon in icons"
       :iconName="icon.iconName"
