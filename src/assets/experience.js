@@ -3,6 +3,15 @@ const experience = [
     heading: 'Northcoders',
     iconName: 'ri-arrow-up-s-line',
     iconColour: 'text-red-800',
+    dates: 'Aug 2024 - Present',
+    subtitle: 'Junior Software Developer & Mentor',
+    description:
+      'Working as part of the classroom team to support students whilst consolidating my learning through software development projects'
+  },
+  {
+    heading: 'Northcoders',
+    iconName: 'ri-arrow-up-s-line',
+    iconColour: 'text-red-800',
     dates: 'April 2024 - Jun 2024',
     subtitle: 'Software Development Bootcamp',
     description:
