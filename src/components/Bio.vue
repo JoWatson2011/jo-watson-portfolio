@@ -7,9 +7,8 @@
       developer.
     </span>
     <br />
-    I have recently completed the Northcoders software development bootcamp and I am now actively
-    looking for my first role in tech. I have built front- and back-end projects using a range of
-    JavaScript frameworks and bring a strong background in data handling (including databases),
-    analysis and visualisation.
+    I am currently working at Northcoders as a junior software developer and mentor. I have built
+    front- and back-end projects using a range of JavaScript frameworks and bring a strong
+    background in data handling (including databases), analysis and visualisation.
   </p>
 </template>
