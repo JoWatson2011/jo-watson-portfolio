@@ -17,7 +17,8 @@ export default {
   data() {
     return {
       cardStyle: '',
-      postItPadding:''
+      postItPadding: '',
+      buttonLabel: this.frontEndURL ? 'Server' : 'Repo'
     }
   },
   methods: {
@@ -28,8 +29,8 @@ export default {
       return `${this.Title} screenshot`
     },
     setStyle() {
-      this.cardStyle = this.windowSize === 'large' ? ' ml-5' : ' m-auto max-w-[437px]';
-      this.postItPadding = this.windowSize === 'large' ? '' : "pb-7 m-3";
+      this.cardStyle = this.windowSize === 'large' ? ' ml-5' : ' m-auto max-w-[437px]'
+      this.postItPadding = this.windowSize === 'large' ? '' : 'pb-7 m-3'
     }
   },
   mounted() {
@@ -76,7 +77,7 @@ export default {
             v-if="backEndURL"
             iconName="co-github"
             :url="backEndURL"
-            text="Server"
+            :text="buttonLabel"
           />
         </div>
       </div>
